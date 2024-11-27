@@ -134,7 +134,9 @@ return {
     "mbbill/undotree",
   },
   { "kevinhwang91/nvim-hlslens", config = function() require("hlslens").setup {} end },
-  { "gitsigns" },
+  { "gitsigns",
+    enabled = false
+  },
 
   {
     "dstein64/nvim-scrollview",
@@ -325,6 +327,7 @@ return {
   {
     "Exafunction/codeium.vim",
     event = "VeryLazy",
+    enabled = true,
     config = function()
       vim.g.codeium_disable_bindings = 1
       vim.keymap.set("i", "<Right>", function() return vim.fn["codeium#Accept"]() end, { expr = true })
