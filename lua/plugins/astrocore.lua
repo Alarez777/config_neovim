@@ -27,7 +27,7 @@ return {
     -- vim options can be configured here
     options = {
       opt = { -- vim.opt.<key>
-        guifont = "MesloLGS Nerd Font:h19",
+        guifont = "MesloLGS Nerd Font:h15",
         relativenumber = true, -- sets vim.opt.relativenumber
         number = true, -- sets vim.opt.number
         spell = false, -- sets vim.opt.spell
@@ -67,6 +67,7 @@ return {
           desc = "Select colorscheme",
         },
         ["<leader>,"] = { ":HopLineStart<CR>", desc = "Jump line" },
+        ["<leader>."] = { ":HopChar1CurrentLine<CR>", desc = "Jump in line" },
         ["<Tab><Tab>"] = { ":Telescope find_files<CR>", desc = "Find files" },
         ["<Tab>g"] = { ":Telescope live_grep<CR>", desc = "Find word" },
         ["<Tab>w"] = {
