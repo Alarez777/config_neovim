@@ -1,3 +1,9 @@
+local function paste_preserve_clipboard()
+  local old_val = vim.fn.getreg("+")
+  vim.api.nvim_command([[normal! p]])
+  vim.fn.setreg("+", old_val)
+end
+
 -- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
@@ -88,6 +94,8 @@ return {
       v = {
         ["<Tab>"] = { ">gv", desc = "Make ident right" },
         ["<S-Tab>"] = { "<gv", desc = "Make ident left" },
+        ["<S-Tab>"] = { "<gv", desc = "Make ident left" },
+        ["<leader>p"] = { function() paste_preserve_clipboard() end, desc = "Paste preserving clipboard" },
         -- ["f"] = {
         --   "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>",
         --   desc = "Jump f",
@@ -112,3 +120,4 @@ return {
     },
   },
 }
+
