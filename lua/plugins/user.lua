@@ -327,7 +327,7 @@ return {
   {
     "Exafunction/codeium.vim",
     event = "VeryLazy",
-    enabled = true,
+    enabled = false,
     config = function()
       vim.g.codeium_disable_bindings = 1
       vim.keymap.set("i", "<Right>", function() return vim.fn["codeium#Accept"]() end, { expr = true })
@@ -359,5 +359,5 @@ return {
       }
     end,
   },
-  { "HiPhish/rainbow-delimiters.nvim", event = "VeryLazy" },
+  { "https://gitlab.com/HiPhish/rainbow-delimiters.nvim", event = "VeryLazy" },
 }
