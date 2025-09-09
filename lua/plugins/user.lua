@@ -133,7 +133,7 @@ return {
   {
     "mbbill/undotree",
   },
-  { "kevinhwang91/nvim-hlslens", config = function() require("hlslens").setup {} end },
+  { "kevinhwang91/nvim-hlslens",},
   { "gitsigns",
     enabled = false
   },
