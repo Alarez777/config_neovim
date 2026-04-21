@@ -327,7 +327,7 @@ return {
   {
     "Exafunction/codeium.vim",
     event = "VeryLazy",
-    enabled = false,
+    enabled = true,
     config = function()
       vim.g.codeium_disable_bindings = 1
       vim.keymap.set("i", "<Right>", function() return vim.fn["codeium#Accept"]() end, { expr = true })
