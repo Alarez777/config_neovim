@@ -92,12 +92,17 @@ return {
       }
     end,
   },
+  -- {
+  --   "phaazon/hop.nvim",
+  --   enabled = true,
+  --   event = "VeryLazy",
+  --   branch = "v2", -- optional but strongly recommended
+  --   config = function() require("hop").setup { keys = "etovxqpdygfblzhckisura" } end,
+  -- },
   {
-    "phaazon/hop.nvim",
-    enabled = true,
+    "folke/flash.nvim",
     event = "VeryLazy",
-    branch = "v2", -- optional but strongly recommended
-    config = function() require("hop").setup { keys = "etovxqpdygfblzhckisura" } end,
+    opts = {}
   },
   {
     "karb94/neoscroll.nvim",

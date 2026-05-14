@@ -68,13 +68,13 @@ return {
         --   "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })<cr>",
         --   desc = "Jump T",
         -- },
-        ["<leader>m"] = { ":HopChar1<CR>", desc = "Jump promp" },
+        -- ["<leader>m"] = { ":HopChar1<CR>", desc = "Jump promp" },
         ["<leader>fs"] = {
           ":Telescope colorscheme<CR>",
           desc = "Select colorscheme",
         },
-        ["<leader>,"] = { ":HopLineStart<CR>", desc = "Jump line" },
-        ["<leader>."] = { ":HopChar1CurrentLine<CR>", desc = "Jump in line" },
+        -- ["<leader>,"] = { ":HopLineStart<CR>", desc = "Jump line" },
+        -- ["<leader>."] = { ":HopChar1CurrentLine<CR>", desc = "Jump in line" },
         ["<Tab><Tab>"] = { ":Telescope find_files<CR>", desc = "Find files" },
         ["<Tab>g"] = { ":Telescope live_grep<CR>", desc = "Find word" },
         ["<Tab>w"] = {
