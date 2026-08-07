@@ -92,18 +92,6 @@ return {
       }
     end,
   },
-  -- {
-  --   "phaazon/hop.nvim",
-  --   enabled = true,
-  --   event = "VeryLazy",
-  --   branch = "v2", -- optional but strongly recommended
-  --   config = function() require("hop").setup { keys = "etovxqpdygfblzhckisura" } end,
-  -- },
-  {
-    "folke/flash.nvim",
-    event = "VeryLazy",
-    opts = {}
-  },
   {
     "karb94/neoscroll.nvim",
     config = function() require("neoscroll").setup {} end,
@@ -313,15 +301,7 @@ return {
   {
     "folke/flash.nvim",
     event = "VeryLazy",
-    ---@type Flash.Config
-    opts = {},
-    -- keys = {
-    --   { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
-    --   { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-    --   { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-    --   { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-    --   { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
-    -- },
+    enabled = true,
   },
   {
     "stevearc/oil.nvim",
@@ -332,7 +312,7 @@ return {
   {
     "Exafunction/codeium.vim",
     event = "VeryLazy",
-    enabled = true,
+    enabled = false,
     config = function()
       vim.g.codeium_disable_bindings = 1
       vim.keymap.set("i", "<Right>", function() return vim.fn["codeium#Accept"]() end, { expr = true })

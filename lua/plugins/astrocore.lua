@@ -52,29 +52,66 @@ return {
     mappings = {
       -- first key is the mode
       n = {
-        -- ["f"] = {
-        --   "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>",
-        --   desc = "Jump f",
-        -- },
-        -- ["F"] = {
-        --   "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>",
-        --   desc = "Jump F",
-        -- },
-        -- ["t"] = {
-        --   "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, hint_offset = -1 })<cr>",
-        --   desc = "Jump t",
-        -- },
-        -- ["T"] = {
-        --   "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })<cr>",
-        --   desc = "Jump T",
-        -- },
-        -- ["<leader>m"] = { ":HopChar1<CR>", desc = "Jump promp" },
+        ["<leader>m"] = {
+          function()
+            flash.jump()
+          end,
+          desc = "Jump prompt",
+        },
+        ["<leader>,"] = {
+          function()
+            flash.jump({
+              search = {
+                mode = "search",
+              },
+              pattern = "^",
+            })
+          end,
+          desc = "Jump line",
+        },
+        ["<leader>."] = {
+          function()
+            flash.jump({
+              search = {
+                mode = "search",
+              },
+              multi_window = false,
+              pattern = ".",
+            })
+          end,
+          desc = "Jump in line",
+        },
+        ["<leader>F"] = {
+          function()
+            require("flash").jump({
+              search = {
+                mode = "search",
+              },
+              label = {
+                after = { 0, 0 },
+              },
+            })
+          end,
+          desc = "Flash jump f",
+        },
+
+        ["<leader>T"] = {
+          function()
+            require("flash").jump({
+              search = {
+                mode = "search",
+              },
+              label = {
+                after = { 0, -1 },
+              },
+            })
+          end,
+          desc = "Flash jump t",
+        },
         ["<leader>fs"] = {
           ":Telescope colorscheme<CR>",
           desc = "Select colorscheme",
         },
-        -- ["<leader>,"] = { ":HopLineStart<CR>", desc = "Jump line" },
-        -- ["<leader>."] = { ":HopChar1CurrentLine<CR>", desc = "Jump in line" },
         ["<Tab><Tab>"] = { ":Telescope find_files<CR>", desc = "Find files" },
         ["<Tab>g"] = { ":Telescope live_grep<CR>", desc = "Find word" },
         ["<Tab>w"] = {
@@ -97,22 +134,32 @@ return {
         ["<S-Tab>"] = { "<gv", desc = "Make ident left" },
         ["<S-Tab>"] = { "<gv", desc = "Make ident left" },
         ["<leader>p"] = { function() paste_preserve_clipboard() end, desc = "Paste preserving clipboard" },
-        -- ["f"] = {
-        --   "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>",
-        --   desc = "Jump f",
-        -- },
-        -- ["F"] = {
-        --   "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>",
-        --   desc = "Jump F",
-        -- },
-        -- ["t"] = {
-        --   "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, hint_offset = -1 })<cr>",
-        --   desc = "Jump t",
-        -- },
-        -- ["T"] = {
-        --   "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })<cr>",
-        --   desc = "Jump T",
-        --       },
+        ["<leader>F"] = {
+          function()
+            require("flash").jump({
+              search = {
+                mode = "search",
+              },
+              label = {
+                after = { 0, 0 },
+              },
+            })
+          end,
+          desc = "Flash jump f",
+        },
+        ["<leader>T"] = {
+          function()
+            require("flash").jump({
+              search = {
+                mode = "search",
+              },
+              label = {
+                after = { 0, -1 },
+              },
+            })
+          end,
+          desc = "Flash jump t",
+        },
       },
       t = {
         -- setting a mapping to false will disable it
@@ -121,4 +168,3 @@ return {
     },
   },
 }
-
